@@ -7,21 +7,19 @@
   ],
   "homepage": "https://www.workerman.net",
   "license": "MIT",
-  "description": "High performance HTTP Service Framework.",
+  "description": "基于 webman 开发框架.",
   "authors": [
     {
-      "name": "walkor",
-      "email": "walkor@workerman.net",
-      "homepage": "https://www.workerman.net",
+      "name": "cdyun",
+      "email": "121625706@qq.com",
       "role": "Developer"
     }
   ],
   "support": {
-    "email": "walkor@workerman.net",
-    "issues": "https://github.com/walkor/webman/issues",
-    "forum": "https://wenda.workerman.net/",
+    "email": "121625706@qq.com",
+    "issues": "https://github.com/cdyun303/webman-framework/issues",
     "wiki": "https://workerman.net/doc/webman",
-    "source": "https://github.com/walkor/webman"
+    "source": "https://github.com/cdyun303/webman-framework"
   },
   "require": {
     "php": ">=8.1",
