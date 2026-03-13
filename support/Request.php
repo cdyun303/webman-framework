@@ -20,6 +20,16 @@ namespace support;
  */
 class Request extends \Webman\Http\Request
 {
-    public $uid = null;
+    /**
+     * 系统类型
+     * @var string
+     */
+    public string $os = '';
+
+    /**
+     * 浏览器类型
+     * @var string
+     */
+    public string $browser = '';
 
 }

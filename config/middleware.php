@@ -17,6 +17,8 @@ return [
     '' => [
         //跨域
         support\middleware\CrossDomainMiddleware::class,
+        //浏览器检查
+        support\middleware\BrowserCheckMiddleware::class,
     ],
     //后台中间件
 //    'admin' => [

@@ -16,7 +16,7 @@ class AppHandler extends ExceptionHandler
     public function report(Throwable $exception)
     {
         // 自定义异常类，专门用于终止程序并返回错误信息，不需要记录日志
-        if ($exception instanceof AdminException || $exception instanceof PageNotFoundException) {
+        if ($exception instanceof AppException || $exception instanceof PageNotFoundException) {
             return;
         }
         if ($this->shouldntReport($exception)) {

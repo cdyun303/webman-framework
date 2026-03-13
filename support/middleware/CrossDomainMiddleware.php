@@ -6,10 +6,12 @@ use Webman\Http\Request;
 use Webman\Http\Response;
 use Webman\MiddlewareInterface;
 
+/**
+ * 处理跨域请求，及接口访问白名单域名
+ */
 class CrossDomainMiddleware implements MiddlewareInterface
 {
     /**
-     * 处理跨域请求，及接口访问白名单域名
      * @param Request $request
      * @param callable $handler
      * @return Response
@@ -29,13 +31,13 @@ class CrossDomainMiddleware implements MiddlewareInterface
 
         // 处理 OPTIONS 预检请求，推荐使用 204 No Content
         if ($request->method() === 'OPTIONS') {
-            $response = response('', 204);
+            $result = response('', 204);
         } else {
-            $response = $handler($request);
+            $result = $handler($request);
         }
 
         // 添加 CORS 相关响应头
-        $response->withHeaders([
+        $result->withHeaders([
             'Access-Control-Allow-Credentials' => 'true',
             'Access-Control-Allow-Origin' => $origin,
             'Access-Control-Max-Age' => $accessControlMaxAge ?? 3600,
@@ -44,6 +46,6 @@ class CrossDomainMiddleware implements MiddlewareInterface
             'Vary' => 'Origin',
         ]);
 
-        return $response;
+        return $result;
     }
 }
