@@ -1,0 +1,58 @@
+{
+  "name": "cdyun/webman-framework",
+  "type": "project",
+  "keywords": [
+    "high performance",
+    "http service"
+  ],
+  "homepage": "https://www.workerman.net",
+  "license": "MIT",
+  "description": "基于 webman 开发框架.",
+  "authors": [
+    {
+      "name": "cdyun",
+      "email": "121625706@qq.com",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "121625706@qq.com",
+    "issues": "https://github.com/cdyun303/webman-framework/issues",
+    "wiki": "https://workerman.net/doc/webman",
+    "source": "https://github.com/cdyun303/webman-framework"
+  },
+  "require": {
+    "php": ">=8.1",
+    "ext-posix": "*",
+    "ext-pcntl": "*",
+    "workerman/webman-framework": "^2.1",
+    "monolog/monolog": "^2.0",
+    "vlucas/phpdotenv": "^5.6",
+    "webman/event": "^1.0",
+    "cdyun/webman-response": "^1.0"
+  },
+  "suggest": {
+    "ext-event": "For better performance. "
+  },
+  "autoload": {
+    "psr-4": {
+      "": "./",
+      "app\\": "./app",
+      "App\\": "./app",
+      "app\\View\\Components\\": "./app/view/components"
+    }
+  },
+  "scripts": {
+    "post-package-install": [
+      "support\\Plugin::install"
+    ],
+    "post-package-update": [
+      "support\\Plugin::install"
+    ],
+    "pre-package-uninstall": [
+      "support\\Plugin::uninstall"
+    ]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
